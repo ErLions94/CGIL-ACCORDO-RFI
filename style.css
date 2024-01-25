@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.post {
+    display: flex;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    border: 1px solid black;
+    background-image: url(spirale.jpeg);
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    width: 100vw;
+    flex: 0 0 auto;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.testi {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}

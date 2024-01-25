@@ -1,15 +1,43 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
-  <title>Responsive Text</title>
+  <style>
+    body {
+      transition: transform 0.5s;
+    }
+
+    @media screen and (orientation: portrait) {
+      body.rotate {
+        transform: rotate(90deg);
+      }
+    }
+
+    @media screen and (orientation: landscape) {
+      body.rotate {
+        transform: rotate(0deg);
+      }
+    }
+
+    button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
-  <div id="responsiveDiv" class="partial-text">
-    <p>Questo è un testo parziale.</p>
-    <p class="full-text">Questo è il testo completo.</p>
-  </div>
+
+<button onclick="rotateScreen()">Ruota Schermo</button>
+
+<script>
+  function rotateScreen() {
+    document.body.classList.toggle('rotate');
+  }
+</script>
+
 </body>
 </html>

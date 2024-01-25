@@ -3,11 +3,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   testoContainer.addEventListener('click', function () {
     testoContainer.classList.toggle('espanso');
+    adattaTesto();
   });
 
   window.addEventListener('resize', function () {
-    if (window.innerWidth >= 480) {
-      testoContainer.classList.remove('espanso');
-    }
+    adattaTesto();
   });
+
+  function adattaTesto() {
+    const testoRidotto = document.querySelector('.testo-ridotto');
+    const testoCompleto = document.querySelector('.testo-completo');
+
+    if (testoContainer.classList.contains('espanso')) {
+      testoRidotto.style.display = 'none';
+      testoCompleto.style.display = 'block';
+    } else {
+      testoRidotto.style.display = 'block';
+      testoCompleto.style.display = 'none';
+    }
+  }
 });
